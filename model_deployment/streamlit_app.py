@@ -37,7 +37,7 @@ st.image("https://sarasanalytics.com/wp-content/uploads/2019/11/Customer-Lifetim
 data = st.file_uploader("File Uploader")
 
 st.sidebar.image("http://logok.org/wp-content/uploads/2014/06/City-of-Melbourne-logo-M.png", width = 120)
-st.sidebar.markdown(""" **Made with :heart: by Mukul Singhal** """)
+st.sidebar.markdown(""" **Made with :heart: by Vinit Kumar** """)
 
 
 st.sidebar.title("Input Features :pencil:")
@@ -45,7 +45,7 @@ st.sidebar.title("Input Features :pencil:")
 
 st.sidebar.markdown("""
 
-[Example CSV Input File](https://raw.githubusercontent.com/mukulsinghal001/customer-lifetime-prediction-using-python/main/model_deployment/sample_file.csv)
+[Example CSV Input File](https://raw.githubusercontent.com/vinitisready/customer-lifetime-prediction-using-python/main/model_deployment/sample_file.csv)
 
 	""")
 
@@ -77,7 +77,7 @@ st.sidebar.markdown("""
 
 Before uploading the file, please select the input features first.
 
-Also, please make sure the columns are in proper format. For reference you can download the [dummy data](https://raw.githubusercontent.com/mukulsinghal001/customer-lifetime-prediction-using-python/main/model_deployment/sample_file.csv).
+Also, please make sure the columns are in proper format. For reference you can download the [dummy data](https://raw.githubusercontent.com/vinitisready/customer-lifetime-prediction-using-python/main/model_deployment/sample_file.csv).
 
 **Note:** Only Use "CSV" File.
 

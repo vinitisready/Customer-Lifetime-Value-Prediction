@@ -65,3 +65,31 @@ k) Warnings
 
 
 **For Model Hosting & Deployment:** Github | Streamlit
+
+**Steps for deployment of this model**
+### ✅ 1. **Fork or Clone This Repository**
+
+If you haven't already:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/customer-lifetime-prediction.git
+cd customer-lifetime-prediction
+
+[Step-2]
+✅ Install Required Libraries (for Local Testing)
+Create a virtual environment (optional but recommended):
+
+[Step-3]
+python -m venv venv
+venv\Scripts\activate  # For Windows
+# or
+source venv/bin/activate  # For macOS/Linux
+
+[Step-4]
+Install dependencies:
+pip install -r requirements.txt
+
+[Step-5]
+✅ 3. Run the App Locally (Optional)
+
+streamlit run streamlit_app.py

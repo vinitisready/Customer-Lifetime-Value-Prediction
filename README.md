@@ -8,13 +8,12 @@ The dataset which we are going to use in this problem has taken from the UCI Mac
 
 Before starting with the model, let's first understand what is Customer Lifetime Value.
 
-![Customer Lifetime Value Prediction](https://neilpatel.com/wp-content/uploads/2018/05/facebook-lifetime-value.jpg)
 
 ### Abstract
 
 **What is Customer Lifetime Value?**
 
-[Customer lifetime value](https://en.wikipedia.org/wiki/Customer_lifetime_value) (CLV) is one of the key stats likely to be tracked as part of a customer experience program. CLV is a measurement of how valuable a customer is to your company with an unlimited time span as opposed to just the first purchase. This metric helps you understand a reasonable cost per acquisition.
+[Customer lifetime value](CLV) is one of the key stats likely to be tracked as part of a customer experience program. CLV is a measurement of how valuable a customer is to your company with an unlimited time span as opposed to just the first purchase. This metric helps you understand a reasonable cost per acquisition.
 CLV is the total worth to a business of a customer over the whole period of their relationship. It’s an important metric as it costs less to keep existing customers than it does to acquire new ones, so increasing the value of your existing customers is a great way to drive growth.
 
 **Challenges -** 
@@ -34,7 +33,6 @@ There are basically two types of business context which I am going to discuss be
 
 **b) Non-Contractual -**  In the non-contractual world, customers do go away, but they do so silently; they have no need to tell us they are leaving. This makes for a much trickier CLV calculation. For Ex- Retail/E-Commerce
 
-![Business Context](https://2zzm8x3dsugfsdli13ukukea-wpengine.netdna-ssl.com/wp-content/uploads/hardie_non_contract_continuous.png)
 
 **Purchase Opportunities Types:**
 
@@ -66,15 +64,4 @@ k) Warnings
 6) Streamlit
 
 
-**For Model Hosting & Deployment:** Heroku | Github | Streamlit
-
-*****Miscellaneous:*****
-
-[Midway Report Link](https://github.com/mukulsinghal001/customer-lifetime-prediction-using-python/blob/main/Customer%20Lifetime%20Prediction%20Using%20Probabilistic%20Models%20-%20Midway%20Report.ipynb) | [Attributes TXT File](https://github.com/mukulsinghal001/customer-lifetime-prediction-using-python/blob/main/Online%20Retail%20Dataset%20Attributes%20Info.txt) | [Dataset Link](https://archive.ics.uci.edu/ml/datasets/Online+Retail+II#) | [Baseline Model Results](https://github.com/mukulsinghal001/customer-lifetime-prediction-using-python/blob/main/Predicted%20CLV%20Results.csv)
-
-Final Model is Live Now: https://mukulsinghal001-customer-lifetime-model-de-streamlit-app-t3zaq6.streamlit.app/
-
-
-### Lead Scoring Model Project:
-
-You can also check out my [lead scoring classification prediction model](https://github.com/mukulsinghal001/lead-scoring-model-python) related to marketing analytics as well.
+**For Model Hosting & Deployment:** Github | Streamlit

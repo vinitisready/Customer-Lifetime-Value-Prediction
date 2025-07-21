@@ -1,95 +1,101 @@
-# Customer Lifetime Value Prediction & LTV Segmentation
+# Customer Lifetime Value Prediction
 
-### Objective: 
-We have to predict the customer's lifetime value and segment the customers based on their LTV so that we can provide this information to the marketing team for the campaign & CPA optimization.
+This project implements a Customer Lifetime Value (CLV) prediction model using the Pareto/NBD and Gamma-Gamma models. These probabilistic models are particularly well-suited for non-contractual business settings (like retail/e-commerce) where customers can churn silently without notifying the business.
 
-### Introduction:
-The dataset which we are going to use in this problem has taken from the UCI Machine Learning Repository. This is a transactional data set which contains all the actual transactions for a UK-based and registered ecommerce online retail store. The company mainly sells unique all-occasion gifts. This dataset has several features which includes the Invoice Number, Stock Code, Product Description, Product Quantity, Invoice Date, Unit Price, Customer ID, etc.
+## Overview
 
-Before starting with the model, let's first understand what is Customer Lifetime Value.
+Customer Lifetime Value (CLV) is a prediction of the total value a business can expect from a customer throughout their relationship. Understanding CLV helps businesses:
 
+- Identify high-value customers
+- Optimize marketing spend
+- Improve customer retention strategies
+- Make data-driven decisions about customer acquisition costs
 
-### Abstract
+## Models Used
 
-**What is Customer Lifetime Value?**
+1. **Pareto/NBD Model**: Predicts the expected number of future purchases a customer will make
+2. **Gamma-Gamma Model**: Predicts the expected monetary value of future purchases
 
-[Customer lifetime value](CLV) is one of the key stats likely to be tracked as part of a customer experience program. CLV is a measurement of how valuable a customer is to your company with an unlimited time span as opposed to just the first purchase. This metric helps you understand a reasonable cost per acquisition.
-CLV is the total worth to a business of a customer over the whole period of their relationship. It’s an important metric as it costs less to keep existing customers than it does to acquire new ones, so increasing the value of your existing customers is a great way to drive growth.
+Together, these models provide a robust framework for CLV prediction in non-contractual settings.
 
-**Challenges -** 
-Some companies don’t attempt to measure CLV, citing the challenges of segregated teams, inadequate systems, and untargeted marketing.
+## Features
 
-**Why is it important to track customer lifetime value?**
+- Data preprocessing for CLV modeling
+- RFM (Recency, Frequency, Monetary) analysis
+- Customer purchase prediction using Pareto/NBD model
+- Monetary value prediction using Gamma-Gamma model
+- Customer segmentation based on CLV
+- Visualization of results
+- Streamlit web application for easy deployment
 
-CLTV tell marketers, how much revenue they can expect from one customer over the course of the business relationship. The longer a customer continues to purchase from a company, the greater their lifetime value becomes.
+## Project Structure
 
-To calculate the customer lifetime value, there are several methods available on the internet which you can google but here I am going to share with you the model which I have used and the reason behind choosing that specific model.
+- `clv_prediction_model.py`: Core implementation of the CLV prediction models
+- `clv_prediction_app.py`: Streamlit web application for interactive CLV prediction
+- `requirements.txt`: Required Python packages
 
-To create the model first we have to understand the course of business or in short business context and its customer's.
+## Installation
 
-There are basically two types of business context which I am going to discuss below regards to the relationship and purchase opportunities.
-
-**a) Contractual -** Contractual business refers to the business where there is a definite time when the customer is going to churn or we can say we know when the customer is going to be dropped. This type of customer relationship known as contractual and the customers called the subscription customers. For Ex - Hotstar, Netflix, Amazon Prime Subscription
-
-**b) Non-Contractual -**  In the non-contractual world, customers do go away, but they do so silently; they have no need to tell us they are leaving. This makes for a much trickier CLV calculation. For Ex- Retail/E-Commerce
-
-
-**Purchase Opportunities Types:**
-
-**a) Continuous -** It refers the purchase opportunites when there is continuous purchases done by the customers.
-
-**b) Discrete -** Under discrete, the purchase happened on a specific time period. For Ex- Subscription Plan
-
-So based on the above, we can identify the business context and choose method which is best suited for the case.
-
-### Purpose of the research
-
-Following the problem and motivation described above, the purpose of this study is formulated. The study aims at investigating possible methods with context to the non-contractual-continuous business for estimation of potential revenue (CLV) generated by a certain group of active customers. To perform this estimation, the probabilistic models (Pareto-NBD, BG-NBD, MBG-NBD & Gamma Gamma) has been applied to the case study in the industry. Customer segmentation by means of unsupervised machine learning was also performed in order to show an efficient tool for strategy planning.
-
-***Steps Involved in this Project:*** Data Importing | Data Cleaning | Exploratory Data Analysis | Feature Engineering/Extraction | Cross Validation | Different Predictive Models Building | LTV Based Customer Segmentation | Model Evaluation | Model Deployment
-
-***Libraries Used***
-
-a) Scikit Learn
-b) Lifetimes
-c) Plotly, Matplotlib, Seaborn, Altair
-d) XLRD
-e) Streamlit
-f) Numpy
-g) Pandas
-h) Datetime
-i) Math
-j) Pickle
-k) Warnings
-6) Streamlit
-
-
-**For Model Hosting & Deployment:** Github | Streamlit
-
-**Steps for deployment of this model**
-### ✅ 1. **Fork or Clone This Repository**
-
-If you haven't already:
+1. Clone this repository
+2. Install the required packages:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/customer-lifetime-prediction.git
-cd customer-lifetime-prediction
-
-[Step-2]
-✅ Install Required Libraries (for Local Testing)
-Create a virtual environment (optional but recommended):
-
-[Step-3]
-python -m venv venv
-venv\Scripts\activate  # For Windows
-# or
-source venv/bin/activate  # For macOS/Linux
-
-[Step-4]
-Install dependencies:
 pip install -r requirements.txt
+```
 
-[Step-5]
-✅ 3. Run the App Locally (Optional)
+## Usage
 
-streamlit run streamlit_app.py
+### Command Line
+
+Run the CLV prediction model on your transaction data:
+
+```bash
+python clv_prediction_model.py
+```
+
+### Web Application
+
+Launch the Streamlit web application:
+
+```bash
+streamlit run clv_prediction_app.py
+```
+
+Then open your browser and navigate to the URL shown in the terminal (typically http://localhost:8501).
+
+## Input Data Format
+
+Your transaction data should be in CSV format with at least the following columns:
+
+- `CustomerID`: Unique identifier for each customer
+- `InvoiceDate`: Date of the transaction
+- `Quantity`: Number of items purchased
+- `Price`: Price per item
+
+## Output
+
+The model produces:
+
+1. Customer-level CLV predictions
+2. Customer segmentation based on CLV
+3. Visualizations of the results
+4. CSV export of all predictions
+
+## Customer Segmentation
+
+Customers are segmented into four groups based on their predicted CLV:
+
+- **Low Value**: Customers with the lowest predicted CLV
+- **Medium Value**: Customers with below-average predicted CLV
+- **High Value**: Customers with above-average predicted CLV
+- **Very High Value**: Your most valuable customers
+
+## References
+
+- Fader, P. S., Hardie, B. G., & Lee, K. L. (2005). "Counting Your Customers" the Easy Way: An Alternative to the Pareto/NBD Model. Marketing Science, 24(2), 275-284.
+- Fader, P. S., & Hardie, B. G. (2013). The Gamma-Gamma Model of Monetary Value. 
+- Lifetimes Python package: https://github.com/CamDavidsonPilon/lifetimes
+
+## License
+
+MIT
